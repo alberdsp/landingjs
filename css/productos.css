@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'PT Sans', sans-serif;
+    background-color: #ffffff;
+}
+
+
+
+
+/* estilos de la cabecera */
+
+.cabecera { grid-area: header; 
+background-color: #ffffff;
+
+
+
+width: 100%;
+height: 90px;
+
+display:flex;
+flex-direction: row;
+
+
+}
+
+
+.cabecera .boxh {
+    
+   
+    width: auto;
+    height: 30px;
+    border-radius: 10px;
+    
+    background-color: rgb(219, 216, 216);
+    margin-top: 10px;
+    padding: 5px;
+    margin-left: 10px;
+    font-size: 0.5em;
+    text-align: center;
+   
+    
+}
+
+
+
+.cabecera .boxh:hover{
+
+    
+    
+    width: auto;
+    height: 30px;
+    border-radius: 10px;
+    
+    background-color: rgb(219, 216, 216);
+    margin-top: 10px;
+    padding: 5px;
+    margin-left: 10px;
+    font-size: 0.5em;
+    text-align: center;
+
+    background-color: rgb(168, 166, 166);
+
+   
+}
+
+
+
+.cabecera .actual {
+    
+   
+    width: auto;
+    height: 30px;
+    border-radius: 10px;
+    
+    background-color: rgb(56, 55, 55);
+    margin-top: 10px;
+    padding: 5px;
+    margin-left: 10px;
+    font-size: 0.5em;
+    text-align: center;
+    color: #ffffff;
+   
+    
+}
+
+
+
+.main { grid-area: main; 
+
+   
+
+}
+
+.grid-contenedor {
+    display: grid;
+
+    grid-template-columns: 1fr 5fr 5fr;
+    grid-template-rows: 60px 60px auto;
+    grid-template-areas:
+      'buscar buscar buscar '
+      'menu-lat header header '
+      'menu-lat main main ';
+    gap: 10px;
+  
+    
+
+}
+
+.grid-contenedor > div {
+  
+    text-align: center;
+    padding: 10px;
+    font-size: 30px;
+
+  }
+
+
+
+body{
+    
+    height:100%;
+   overflow:hidden;
+    
+    background:#f2f8fa;
+}
+
+
+
+
+
+
+/* contenedor de la caja central */
+
+.card-container {
+    max-width: auto;
+    margin: 0 auto;
+    padding: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    overflow-y:scroll;
+    max-height: 900px;
+  }
+
+
+
+  /* diseño caja */
+
+  .card-container .card{
+    margin: 10px;
+    position: relative;
+    width: 500px;
+    height: 500px;
+    
+    overflow: hidden;
+    box-shadow: 0 15px 35px (0,0,0,0.25);
+
+}
+
+
+ .card-container .card:hover{
+    margin: 10px;
+    position: relative;
+    width: 500px;
+    height: 500px;
+   
+    
+    box-shadow: 0 15px 35px (0,0,0,0.25);
+    transition: 0.5s;
+    
+
+}
+
+
+
+.card-container .card .producto{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+  
+   
+    overflow: hidden;
+    box-shadow: 0 15px 35px (0,0,0,0.25);
+
+}
+
+
+.card-container .card .producto img{
+    width: 100%;
+    height: 70%;
+    border-radius: 10px;
+    
+}
+
+.card-container .card:hover .producto img{
+
+    width: 100%;
+    height: 70%;
+   
+    border-radius: 10px;
+    overflow: hidden;
+    
+}
+
+.card-container .card .detalle{
+    position: absolute;
+    display:flexbox;
+    flex-direction: row;
+    bottom: 0px;
+    align-content: flex-end;
+    padding-bottom: 20px;
+    width: 500px;
+    height: 40%;
+   
+}
+
+
+
+/* descripcion del producto */
+
+.card-container .card .detalle a{
+    
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: rgb(29, 21, 21);
+    background:transparent;
+    font-size: 0.5em;
+    text-align: left;   
+
+}
+
+/* si está en oferta */
+
+.card-container .card .detalle .oferta span{
+    order: 3;
+  
+    padding: 2px 5px;
+    color: rgb(245, 242, 242);
+    background-color: #f50303;
+    border-radius: 2px;
+}
+
+
+/* si no está  en oferta */
+
+.card-container .card .detalle .nooferta span{
+    
+    order: 3;
+    margin-top: 30px;
+    padding: 2px 5px;
+    color: rgb(245, 242, 242);
+    background-color: #ffffff;
+    border-radius: 2px;
+}
+
+
+
+/* info del producto   */
+
+.card-container .card .detalle .info{
+    order: 4;
+    color: rgb(68, 63, 63);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1em;
+    text-align: right;
+
+    
+}
+
+
+
+/* contenedor de botones card  */
+
+.card-container .card .botones {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* boton normal  */
+
+.card-container .card .boton{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 2px;
+    margin-left: auto;
+  
+    background-color: #806a09;
+    width: 50%;
+    height: 40px;
+    border-radius: 20px;
+    overflow: hidden;
+    color: rgb(255, 255, 255);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: small;
+
+}
+
+
+
+/* clase cantidad del card  */
+.card-container .card .botones .cantidad{
+
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+   
+    margin-right: auto;
+    margin-left: auto;
+  
+   
+   
+    height:80;
+    width: 80;
+    overflow: hidden;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+    font-size:1em;
+
+}
+
+/*  texto link botones de ver mas de los card  */
+.card-container .card .boton a{
+
+    font-size: 1.3em;
+    color: rgb(255, 255, 255);
+    
+}
+
+.card-container .card .detalle .ver{
+    position: relative;
+}
+
+
+
+

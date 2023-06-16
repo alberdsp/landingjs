@@ -267,3 +267,39 @@ body footer .low-footer{
 
 
 
+
+/* estilo para la página de productos */
+
+.container {
+    display:flex;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+
+.card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card h3 {
+    margin-top: 10px;
+}
+
+.card p {
+    margin-top: 5px;
+}
+
+.card .quantity {
+    margin-top: 10px;
+    width: 100px;
+}
+
+.card .add-to-cart {
+    margin-top: 10px;
+}
