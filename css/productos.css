@@ -94,17 +94,17 @@
 /*  clase contendor del carrito */
 
 .grid-contenedor .contenedor-carrito {
-   
+
     background-color: #806a09;
     padding: 10px;
     display: flex;
     font-size: 1em;
-    flex-flow:column;
+    flex-flow: column;
     overflow-y: auto;
     border-width: 2em;
     border: #806a09;
     border-radius: 25px;
-  
+
 }
 
 /*  clase contendor del carrito */
@@ -291,7 +291,7 @@ body {
 /* info del producto precio   */
 
 .card-container .card .detalle .info .precio {
-   
+
     color: rgb(12, 6, 104);
 
     font-family: 'Courier New', Courier, monospace;

@@ -10,25 +10,25 @@ let slideInterval;
 // creamos una función que recorre las imágenes
 
 function showSlide(slideIndex) {
-    slides.forEach((slide, index) => {
-        if (index === slideIndex) {
-            slide.classList.add("active");
-        } else {
-            slide.classList.remove("active");
-        }
-    });
+  slides.forEach((slide, index) => {
+    if (index === slideIndex) {
+      slide.classList.add("active");
+    } else {
+      slide.classList.remove("active");
+    }
+  });
 }
 
 // establece cual es el siguiente slide
 function nextSlide() {
-    currentSlide = (currentSlide + 1) % slides.length;
+  currentSlide = (currentSlide + 1) % slides.length;
 
-    showSlide(currentSlide);
+  showSlide(currentSlide);
 }
 
 // intervalo en milisegundos
 function startSlider() {
-    slideInterval = setInterval(nextSlide, 3000);
+  slideInterval = setInterval(nextSlide, 3000);
 }
 
 
@@ -64,17 +64,17 @@ function addToCart(producto) {
   console.log(totalCarrito);
   updatetotalCarrito();
   displaylistaCarrito();
- 
+
 }
 
 function displaylistaCarrito() {
   listaCarritoContainer.innerHTML = '';
   listaCarrito.forEach(item => {
-   
+
     let cartItemElement = document.createElement('div');
-    cartItemElement.textContent = item.cantidad + "  " + item.nombre ;
+    cartItemElement.textContent = item.cantidad + "  " + item.nombre;
     listaCarritoContainer.appendChild(cartItemElement);
-  
+
   });
 }
 
@@ -93,33 +93,29 @@ function displaylistaCarrito() {
 
 
 addCarritoBoton.forEach(button => {
-  button.addEventListener('click', () => {
-
-
-    let card = document.querySelector('.card');
+  button.addEventListener('click', (event) => {
+    let card = event.target.closest('.card'); // Get the closest parent card element
     let nombreProducto = card.querySelector('.nombre').textContent;
     let precioProducto = card.querySelector('.precio').textContent;
     let cantidadProducto = card.querySelector('.cantidad input').value;
     let totalLinea;
-    precioProducto =  precioProducto.substring(0,precioProducto.trim().length -1);
-    nombreProducto = nombreProducto.substring(0,20);
-    precioProducto= parseFloat(precioProducto);
-    // si la cantidad no se ha elegido ponemos uno
-    cantidadProducto = cantidadProducto > 0 ? cantidadProducto:1
+    precioProducto = precioProducto.substring(0, precioProducto.trim().length - 1);
+    nombreProducto = nombreProducto.substring(0, 50);
+    precioProducto = parseFloat(precioProducto);
+    cantidadProducto = cantidadProducto > 0 ? cantidadProducto : 1;
     totalLinea = parseFloat(cantidadProducto) * precioProducto;
-    console.log(cantidadProducto);
-    console.log(totalLinea);
-    
+
     let producto = {
       nombre: nombreProducto,
       precio: precioProducto,
-      cantidad : cantidadProducto,
-      totallin : totalLinea
+      cantidad: cantidadProducto,
+      totallin: totalLinea
     };
     addToCart(producto);
     displaylistaCarrito();
   });
 });
+
 
 iconoCarrito.addEventListener('click', () => {
   listaCarritoContainer.classList.toggle('show');
@@ -129,15 +125,15 @@ iconoCarrito.addEventListener('click', () => {
 
 // función para el finalizar pedido
 
-finalizarcompra.addEventListener('click', function() {
+finalizarcompra.addEventListener('click', function () {
 
   swal("Trenzados online", "Compra finalizada corréctamente", "success");
-  
-  totalCarrito= 0;
+
+  totalCarrito = 0;
   updatetotalCarrito();
-  listaCarrito=0;
+  listaCarrito = 0;
 
   listaCarritoContainer.innerHTML = '';
   displaylistaCarrito();
-  
+
 });
