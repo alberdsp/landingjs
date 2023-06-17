@@ -69,7 +69,7 @@
 
 /*  clase slaider superior  */
 .grid-contenedor .slider {
-    width: 900px;
+    width: 800px;
     height: 200px;
     overflow: hidden;
     z-index: 10;
@@ -98,6 +98,7 @@
     background-color: #806a09;
     padding: 10px;
     display: flex;
+    font-size: 1em;
     flex-flow:column;
     overflow-y: auto;
     border-width: 2em;

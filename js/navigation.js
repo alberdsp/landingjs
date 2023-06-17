@@ -47,6 +47,7 @@ const addCarritoBoton = Array.from(document.getElementsByClassName('addcarrito')
 const iconoCarrito = document.getElementById('icono-carrito');
 const listaCarritoContainer = document.getElementById('lista-carrito');
 const totalListaCarrito = document.getElementById('total-carrito');
+const finalizarcompra = document.getElementById('finalizar');
 
 
 
@@ -59,23 +60,36 @@ function updatetotalCarrito() {
 
 function addToCart(producto) {
   listaCarrito.push(producto);
-  totalCarrito += producto.precio;
+  totalCarrito += producto.totallin;
+  console.log(totalCarrito);
   updatetotalCarrito();
   displaylistaCarrito();
-  console.log(totalCarrito);
-  console.log(listaCarrito);
+ 
 }
 
 function displaylistaCarrito() {
   listaCarritoContainer.innerHTML = '';
   listaCarrito.forEach(item => {
-    console.log(item.name);
+   
     let cartItemElement = document.createElement('div');
-    cartItemElement.textContent = item.nombre;
+    cartItemElement.textContent = item.cantidad + "  " + item.nombre ;
     listaCarritoContainer.appendChild(cartItemElement);
-    console.log(cartItemElement);
+  
   });
 }
+
+
+
+
+
+
+
+
+
+
+// Función del botoón de añadir
+
+
 
 
 addCarritoBoton.forEach(button => {
@@ -85,16 +99,22 @@ addCarritoBoton.forEach(button => {
     let card = document.querySelector('.card');
     let nombreProducto = card.querySelector('.nombre').textContent;
     let precioProducto = card.querySelector('.precio').textContent;
+    let cantidadProducto = card.querySelector('.cantidad input').value;
+    let totalLinea;
     precioProducto =  precioProducto.substring(0,precioProducto.trim().length -1);
-   // precioProducto = parseFloat(precioProducto);
     nombreProducto = nombreProducto.substring(0,20);
     precioProducto= parseFloat(precioProducto);
-    console.log(nombreProducto);
-    console.log(precioProducto);
+    // si la cantidad no se ha elegido ponemos uno
+    cantidadProducto = cantidadProducto > 0 ? cantidadProducto:1
+    totalLinea = parseFloat(cantidadProducto) * precioProducto;
+    console.log(cantidadProducto);
+    console.log(totalLinea);
     
     let producto = {
       nombre: nombreProducto,
       precio: precioProducto,
+      cantidad : cantidadProducto,
+      totallin : totalLinea
     };
     addToCart(producto);
     displaylistaCarrito();
@@ -105,3 +125,19 @@ iconoCarrito.addEventListener('click', () => {
   listaCarritoContainer.classList.toggle('show');
 });
 
+
+
+// función para el finalizar pedido
+
+finalizarcompra.addEventListener('click', function() {
+
+  swal("Trenzados online", "Compra finalizada corréctamente", "success");
+  
+  totalCarrito= 0;
+  updatetotalCarrito();
+  listaCarrito=0;
+
+  listaCarritoContainer.innerHTML = '';
+  displaylistaCarrito();
+  
+});
