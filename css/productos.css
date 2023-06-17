@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=PT+Sans');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -13,14 +13,14 @@
 
 /* estilos de la cabecera */
 
-.cabecera { 
+.cabecera {
 
 
-width: 100%;
-height:20px;
+    width: 100%;
+    height: 20px;
 
 
-background-color: #ffffff;
+    background-color: #ffffff;
 
 
 }
@@ -29,10 +29,8 @@ background-color: #ffffff;
 
 
 
-
-
-
-.main { grid-area: main; 
+.main {
+    grid-area: main;
 
     background-color: #ffffff;
 
@@ -43,66 +41,100 @@ background-color: #ffffff;
 /*  grid-contenedor que maqueta el layout  */
 .grid-contenedor {
     display: grid;
-background-color: #ffffff;
+    background-color: #ffffff;
     grid-template-columns: 5fr 5fr 5fr;
     grid-template-rows: auto auto auto;
     grid-template-areas:
-      'slider slider slider '
-      'main main main '
-      'main main main '
-      'main main main '
-      'main main main ';
+        'slider slider slider '
+        'main main main '
+        'main main main '
+        'main main main '
+        'main main main ';
     gap: 10px;
     margin-left: 5%;
-  
-    
+
+
 
 }
 
-.grid-contenedor > div {
-  
+.grid-contenedor>div {
+
     text-align: center;
     padding: 10px;
     font-size: 30px;
     background-color: #ffffff;
-  }
+}
 
 
 
 /*  clase slaider superior  */
 .grid-contenedor .slider {
-    width:1600px;
+    width: 900px;
     height: 200px;
     overflow: hidden;
     z-index: 10;
     background-color: #ffffff;
-  }
-  
+    margin-left: 60px;
+}
+
 .grid-contenedor .slider img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: none;
     background-color: #ffffff;
-  }
-  
- .grid-contenedor .slider img.active {
+}
+
+.grid-contenedor .slider img.active {
     background-color: #ffffff;
     display: block;
-  }
+}
+
+
+/*  clase contendor del carrito */
+
+.grid-contenedor .contenedor-carrito {
+   
+    background-color: #806a09;
+    padding: 10px;
+    display: flex;
+    flex-flow:column;
+    overflow-y: auto;
+    border-width: 2em;
+    border: #806a09;
+    border-radius: 25px;
   
+}
+
+/*  clase contendor del carrito */
+
+.grid-contenedor .contenedor-carrito .finalizar {
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    border-radius: 25px;
+    background-color: #d15806;
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    overflow: hidden;
+    color: rgb(255, 255, 255);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: small;
+
+}
 
 
 
+body {
 
+    height: 100%;
+    overflow: hidden;
 
-
-body{
-    
-    height:100%;
-   overflow:hidden;
-    
-   background-color: #ffffff;
+    background-color: #ffffff;
 }
 
 
@@ -110,7 +142,9 @@ body{
 
 
 
-/* contenedor de la caja central */
+/* contenedor de la caja central con un scroll */
+
+
 
 .card-container {
     max-width: auto;
@@ -118,102 +152,104 @@ body{
     padding: 10px;
     display: flex;
     flex-flow: row wrap;
-    overflow-y:scroll;
-    max-height: 1400px;
-  }
+    overflow-y: auto;
+    max-height: 800px;
+}
 
 
 
-  /* diseño caja */
 
-  .card-container .card{
-    margin: 10px;
+
+/* diseño caja */
+
+.card-container .card {
+    margin-bottom: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
     position: relative;
-    width: 500px;
-    height: 500px;
-    
+    width: 350px;
+    height: 350px;
+
     overflow: hidden;
-    box-shadow: 0 15px 35px (0,0,0,0.25);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
 
 }
 
 
- .card-container .card:hover{
-    margin: 10px;
-    position: relative;
-    width: 500px;
-    height: 500px;
-   
-    
-    box-shadow: 0 15px 35px (0,0,0,0.25);
-    transition: 0.5s;
-    
+.card-container .card:hover {
+
+
+    box-shadow: 0 0 45px rgba(0, 0, 0, 0.4);
+
+
 
 }
 
 
 
-.card-container .card .producto{
-    position:absolute;
+.card-container .card .producto {
+    position: absolute;
     width: 100%;
     height: 100%;
-  
-   
+
+
     overflow: hidden;
-    box-shadow: 0 15px 35px (0,0,0,0.25);
+    box-shadow: 0 15px 35px (0, 0, 0, 0.25);
 
 }
 
 
-.card-container .card .producto img{
+.card-container .card .producto img {
     width: 100%;
     height: 70%;
     border-radius: 10px;
-    
+
 }
 
-.card-container .card:hover .producto img{
+.card-container .card:hover .producto img {
 
-    width: 100%;
-    height: 70%;
-   
+    width: 200%;
+    height: 140%;
+
     border-radius: 10px;
     overflow: hidden;
-    
+
 }
 
-.card-container .card .detalle{
+.card-container .card .detalle {
     position: absolute;
-    display:flexbox;
+    display: flexbox;
     flex-direction: row;
     bottom: 0px;
-    align-content: flex-end;
+    align-content: flex-start;
     padding-bottom: 20px;
-    width: 500px;
-    height: 40%;
-   
+    width: 350px;
+    height: 50%;
+    font-size: 1ex;
+    color: black;
+
 }
 
 
 
 /* descripcion del producto */
 
-.card-container .card .detalle a{
-    
+.card-container .card .detalle a {
+
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
     color: rgb(29, 21, 21);
-    background:transparent;
+    background: transparent;
     font-size: 0.5em;
-    text-align: left;   
+    text-align: left;
 
 }
 
 /* si está en oferta */
 
-.card-container .card .detalle .oferta span{
+.card-container .card .detalle .oferta span {
     order: 3;
-  
+
     padding: 2px 5px;
     color: rgb(245, 242, 242);
     background-color: #f50303;
@@ -221,10 +257,10 @@ body{
 }
 
 
-/* si no está  en oferta */
+/* si no está  en oferta para mantener el espacio */
 
-.card-container .card .detalle .nooferta span{
-    
+.card-container .card .detalle .nooferta span {
+
     order: 3;
     margin-top: 30px;
     padding: 2px 5px;
@@ -237,7 +273,7 @@ body{
 
 /* info del producto   */
 
-.card-container .card .detalle .info{
+.card-container .card .detalle .info {
     order: 4;
     color: rgb(68, 63, 63);
     margin-top: 10px;
@@ -245,9 +281,29 @@ body{
     font-family: 'Courier New', Courier, monospace;
     font-size: 1em;
     text-align: right;
+    padding-right: 10px;
 
-    
+
 }
+
+
+/* info del producto precio   */
+
+.card-container .card .detalle .info .precio {
+   
+    color: rgb(12, 6, 104);
+
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5em;
+    text-align: right;
+    padding-right: 10px;
+    font-weight: bold;
+
+}
+
+
+
+
 
 
 
@@ -261,7 +317,7 @@ body{
 
 /* boton normal  */
 
-.card-container .card .boton{
+.card-container .card .botones .boton {
 
     display: flex;
     justify-content: center;
@@ -270,7 +326,7 @@ body{
     margin-bottom: 10px;
     margin-right: 2px;
     margin-left: auto;
-  
+
     background-color: #806a09;
     width: 50%;
     height: 40px;
@@ -284,37 +340,60 @@ body{
 
 
 
+
+.card-container .card .botones .addcarrito {
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 2px;
+    margin-left: auto;
+
+    background-color: #806a09;
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    overflow: hidden;
+    color: rgb(255, 255, 255);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: small;
+
+}
+
+
 /* clase cantidad del card  */
-.card-container .card .botones .cantidad{
+.card-container .card .botones .cantidad {
 
     display: flex;
     margin-top: 20px;
+    margin-bottom: 10px;
     align-items: center;
-   
+
     margin-right: auto;
     margin-left: auto;
-  
-   
-   
-    height:80;
+
+
+
+    height: 80;
     width: 80;
     overflow: hidden;
     box-sizing: border-box;
     font-family: 'Courier New', Courier, monospace;
-    font-size:1em;
+    font-size: 1em;
 
 }
 
 /*  texto link botones de ver mas de los card  */
-.card-container .card .boton a{
+.card-container .card .boton a {
 
     font-size: 1.3em;
     color: rgb(255, 255, 255);
-    
+
 }
 
-.card-container .card .detalle .ver{
+.card-container .card .detalle .ver {
     position: relative;
 }
-
-
