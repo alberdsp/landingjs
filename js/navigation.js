@@ -2,10 +2,13 @@
 const nav = document.querySelector("#nav");
 const abrir = document.querySelector("#abrir");
 const cerrar = document.querySelector("#cerrar");
+
 const slider = document.querySelector(".slider");
 const slides = Array.from(slider.querySelectorAll("img.slide"));
 let currentSlide = 0;
 let slideInterval;
+
+
 
 // creamos una función que recorre las imágenes
 
@@ -39,7 +42,7 @@ startSlider();
 
 
 
-// Función de añadir al carrito
+// Parte que corresponde a la zona del carrito
 
 
 
@@ -54,10 +57,14 @@ const finalizarcompra = document.getElementById('finalizar');
 let listaCarrito = [];
 let totalCarrito = 0;
 
+
+// fucion para actualizar el precio y mostrarlo en el carrito
 function updatetotalCarrito() {
   totalListaCarrito.textContent = `Total: ${totalCarrito} €`;
 }
 
+
+// fución para añadir al carrito
 function addToCart(producto) {
   listaCarrito.push(producto);
   totalCarrito += producto.totallin;
@@ -67,6 +74,7 @@ function addToCart(producto) {
 
 }
 
+// función que muestra las lineas en el carrito
 function displaylistaCarrito() {
   listaCarritoContainer.innerHTML = '';
   listaCarrito.forEach(item => {
@@ -80,14 +88,7 @@ function displaylistaCarrito() {
 
 
 
-
-
-
-
-
-
-
-// Función del botoón de añadir
+// Función del botón de añadir
 
 
 
@@ -123,7 +124,7 @@ iconoCarrito.addEventListener('click', () => {
 
 
 
-// función para el finalizar pedido
+// función para  finalizar pedidom mostramos un mensaje 
 
 finalizarcompra.addEventListener('click', function () {
 

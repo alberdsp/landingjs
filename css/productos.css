@@ -67,7 +67,7 @@
 
 
 
-/*  clase slaider superior  */
+/*  clase slider superior  */
 .grid-contenedor .slider {
     width: 800px;
     height: 200px;
@@ -95,14 +95,14 @@
 
 .grid-contenedor .contenedor-carrito {
 
-    background-color: #806a09;
+    background-color: #d3b98d;
     padding: 10px;
     display: flex;
     font-size: 1em;
     flex-flow: column;
     overflow-y: auto;
     border-width: 2em;
-    border: #806a09;
+    border: #d3b98d;
     border-radius: 25px;
 
 }
@@ -201,16 +201,16 @@ body {
 
 
 .card-container .card .producto img {
-    width: 100%;
-    height: 70%;
+    width: 50%;
+    height: 40%;
     border-radius: 10px;
 
 }
 
 .card-container .card:hover .producto img {
 
-    width: 200%;
-    height: 140%;
+    width: 80%;
+    height: 60%;
 
     border-radius: 10px;
     overflow: hidden;
@@ -328,7 +328,7 @@ body {
     margin-right: 2px;
     margin-left: auto;
 
-    background-color: #806a09;
+    background-color: #d3b98d;
     width: 50%;
     height: 40px;
     border-radius: 20px;
@@ -353,7 +353,7 @@ body {
     margin-right: 2px;
     margin-left: auto;
 
-    background-color: #806a09;
+    background-color: #d3b98d;
     width: 100px;
     height: 40px;
     border-radius: 20px;
